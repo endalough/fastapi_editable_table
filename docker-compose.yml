@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  fastapi_app:
+    build:
+      context: .
+    container_name: fastapi_editable_table
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=sqlite:///./test.db
+    volumes:
+      - .:/app
